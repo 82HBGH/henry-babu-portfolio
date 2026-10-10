@@ -729,6 +729,12 @@ const archiveItems=[
     const shade=document.createElement('span');
     shade.className='absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500';
     tile.appendChild(shade);
+    if(it.type==='video'){
+      const play=document.createElement('span');
+      play.className='absolute inset-0 flex items-center justify-center pointer-events-none';
+      play.innerHTML='<span class="flex items-center justify-center w-14 h-14 rounded-full bg-[color:var(--accent)] text-black shadow-lg group-hover:scale-110 transition-transform duration-500"><svg class="ico" style="width:1.4rem;height:1.4rem;margin-left:2px" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor"/></svg></span>';
+      tile.appendChild(play);
+    }
     tile.addEventListener('click',()=>openMedia(it));
     grid.appendChild(tile);
   });
